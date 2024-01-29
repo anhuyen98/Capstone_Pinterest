@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "3c90e5e5-1032-452f-909d-399f0f16ce7c",
+		"name": "CapstonePinterest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28168037"
+	},
+	"item": [
+		{
+			"name": "sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"anhuyenne5@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"fullname\": \"Duong Vu An Huyen\",\r\n    \"age\": 26,\r\n    \"avatar\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"anhuyenne@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List-image",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEyfSwiaWF0IjoxNzA1Mzk5MDUxLCJleHAiOjE3MDU0ODU0NTF9.iq0Wgyy_CSV98ADg07wXubjNDuUJ5YWs5o463LX3CGA",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/image/list-image?search=Food",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"list-image"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Food"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "image-info-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/image/image-info-by-id/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"image-info-by-id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/comment/list-comment/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment",
+						"list-comment",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-image-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/image/save-image-by-id/5/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"save-image-by-id",
+						"5",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEyfSwiaWF0IjoxNzA2NDUxODcxLCJleHAiOjE3MDY1MzgyNzF9.3gFImYT-wtRTgofmoS6bXgsp4ZhchI_WQKdBGM1sfUo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/user/user-info/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"user-info",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-save-image-by-userID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/user/list-save-image-by-userID/14",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"list-save-image-by-userID",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-create-image-by-userID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/user/list-create-image-by-userID/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"list-create-image-by-userID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-image-by-userID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEyfSwiaWF0IjoxNzA2NDI5MzA5LCJleHAiOjE3MDY1MTU3MDl9.pYmHfBUiTrp3CDnpmVJtmZnMw2aHhjbahXsyx6R5Vxw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1eeaafef-3957-4ee0-b3d0-89dc2e33ce72"
+						},
+						{
+							"key": "image_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "test desc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8081/image/add-image-by-userID/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"add-image-by-userID",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-create-by-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/image/delete-create-by-id/15",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"delete-create-by-id",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user-info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"password\",\r\n    \"fullname\": \"John Doe\",\r\n    \"age\": \"28\",\r\n    \"avatar\": \"john_doe_avatar.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/user/update-user-info/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"update-user-info",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment-image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEyfSwiaWF0IjoxNzA2NDUxODcxLCJleHAiOjE3MDY1MzgyNzF9.3gFImYT-wtRTgofmoS6bXgsp4ZhchI_WQKdBGM1sfUo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"so beautiful!!! good job bro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/comment/comment-image/1/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment",
+						"comment-image",
+						"1",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
