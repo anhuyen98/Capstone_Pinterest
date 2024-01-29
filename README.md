@@ -9,7 +9,8 @@
 - Frontend: Coming soon
 
 *CapstonePinterest.postman_collection.json in my git you check and test it*
-![Capstons Pinterest](/public/imgs/capstone-pinterest.png)
+
+![Capstones Pinterest](public/imgs/capstone-pinterest.png)
 
 
 
