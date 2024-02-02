@@ -26,7 +26,7 @@ imageRoutes.post(
   uploadSingleFile,
   createImage
 ); //
-imageRoutes.get("/save-image-by-id/:imageId/:userId", saveImage); // checkSave (Button Save)
-imageRoutes.delete("/delete-create-by-id/:imageId", deleteImage);
+imageRoutes.get("/save-image-by-id/:imageId/:userId", checkToken, checkUserId, saveImage); // checkSave (Button Save)
+imageRoutes.delete("/delete-create-by-id/:imageId", checkToken, deleteImage);
 
 export default imageRoutes;

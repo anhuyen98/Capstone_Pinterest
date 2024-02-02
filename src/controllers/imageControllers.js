@@ -51,8 +51,15 @@ const getImageById = async (req, res) => {
       where: {
         image_id: Number(imageId),
       },
+      // Bao gồm thông tin user nhưng không kèm những field nhạy cảm
       include: {
-        Users: true,
+        Users: {
+          select: {
+            email: true,
+            fullname: true,
+            avatar: true,
+          },
+        },
       },
     });
     if (data) {
@@ -69,12 +76,12 @@ const createImage = async (req, res) => {
   try {
     let { userId } = req.params;
     let { image_name, description } = req.body;
-    let urlImage = req.url_image
+    let urlImage = req.url_image;
     let newImage = {
       image_name,
       url: urlImage,
       description,
-      user_id: Number(userId)
+      user_id: Number(userId),
     };
     await prisma.images.create({
       data: newImage,
@@ -119,17 +126,25 @@ const deleteImage = async (req, res) => {
       where: {
         image_id: Number(imageId),
       },
+      include: {
+        Users: true,
+      },
     });
-    if (data) {
-      await prisma.images.delete({
-        where: {
-          image_id: Number(imageId)
-        }
-      })
-      res.status(200).send("Delete image sucessful");
-    } else {
-      res.status(404).send("Not Found");
+    if (!data) {
+      return res.status(404).send("Not Found");
     }
+    // Check user create and user delete image
+    let userId = req.user_id;
+    let { user_id } = data.Users;
+    if (userId !== user_id) {
+      return res.status(404).send("User is not permission");
+    }
+    await prisma.images.delete({
+      where: {
+        image_id: Number(imageId),
+      },
+    });
+    res.status(200).send("Delete image sucessful");
   } catch (error) {
     res.status(500).send(`Error ${error}`);
   }
